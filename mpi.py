@@ -51,6 +51,6 @@ def main():
     mpio.ap()
 
 if __name__ == '__main__':
-    print('>>>Welcome to Manjaro Post Installation tool, this tool will setup your manjaro for gaming as well as install all blackarch and archstrike tools, REMEMBER to run as ROOT now press ANY key to continue and enjoy... go watch youtube or something')
-    anykey = input()
+    print('>>>Welcome to Manjaro Post Installation tool, this tool will setup your manjaro for gaming as well as install all blackarch and archstrike tools, REMEMBER to run as ROOT now hit enter to continue and enjoy... go watch youtube or something')
+    enter = input()
     main()
