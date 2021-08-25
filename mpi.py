@@ -3,7 +3,7 @@ import webbrowser
 
 #global variables and lists
 #manjaro gaming setup command
-mgsc = ('sudo pacman -Syyu', 'sudo pacman -S yay', 'yay -S nvidia lutris mesa optimus-manager optimus-manager-qt steam game-mode', 'pip3 install protonup')
+mgsc = ('sudo pacman -Syyu --noconfirm', 'sudo pacman -S --noconfirm yay', 'yay -S --noconfirm nvidia lutris mesa optimus-manager optimus-manager-qt steam game-mode', 'pip3 install protonup')
 #blackarch setup
 bs = ('sudo pacman -Syyu --noconfirm', 'sudo curl -O https://blackarch.org/strap.sh > strap.sh', 'sudo chmod +x strap.sh', 'sudo ./strap.sh')
 #blackarch packages
@@ -27,18 +27,19 @@ class mpi:
     def bp(self):
         for package in bp:
             print('>>>package in progress: ' + package)
-            os.system('yay -S ' + package)
+            os.system('yay -S --noconfirm blackarch-' + package)
             print('>>>package completed')
 
     def aps(self):
         fo = open('/etc/pacman.conf', 'a')
         fo.write('[archstrike]\nServer = https://mirror.archstrike.org/$arch/$repo')
         fo.close()
+        os.system('yay -S archstrike')
 
     def ap(self):
         for package in ap:
             print('>>>package in progress: ' + package)
-            os.system('yay -S ' + package)
+            os.system('yay -S --noconfirm archstrike-' + package)
             print('>>>package completed')
 
 def main():
